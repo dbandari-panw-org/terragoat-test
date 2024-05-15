@@ -49,3 +49,5 @@ resource "azurerm_policy_assignment" "example" {
 }
 PARAMETERS
 }
+
+
