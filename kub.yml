@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: fail-object
+  namespace: user-space
+spec:
+  podSelector:
+    matchLabels:
+      app: user-app
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              name: query
+          podSelector: {}
+      ports:
+        - protocol: TCP
+          port: 8081
