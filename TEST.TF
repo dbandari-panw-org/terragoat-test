@@ -8,7 +8,7 @@ resource "aws_iam_policy" "wildcard_principal" {
       {
         Effect = "Allow",
         Action = "sts:AssumeRole",
-        Principal = "*"
+        Resource = "*"
       }
     ]
   })
